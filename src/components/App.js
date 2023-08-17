@@ -9,12 +9,12 @@ function App() {
   };
 
   return (
-    <div className='model-overlay'>
-      <button onClick={() => setShowModal(true)}>Open Modal</button>
-      <Modal show={showModal} onClose={handleCloseModal}>
-        This is the content of the modal.
-      </Modal>
-    </div>
+    <div>
+    <button onClick={() => setShowModal(true)}>Open Modal</button>
+    <Modal show={showModal} onClose={handleCloseModal}>
+      This is the content of the modal.
+    </Modal>
+  </div>
   );
 }
 

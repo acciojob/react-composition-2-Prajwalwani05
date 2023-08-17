@@ -10,11 +10,13 @@ class Modal extends React.Component {
     }
 
     return (
+        <div className='model-overlay'>
         <div className="model-dialog">
           <button className="model-close" onClick={onClose}>
             Close
           </button>
           <p className="model p">{children}</p>
+        </div>
         </div>
     );
   }
