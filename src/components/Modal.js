@@ -1,7 +1,12 @@
 import React from 'react';
 
-
 class Modal extends React.Component {
+  handleOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      this.props.onClose();
+    }
+  };
+
   render() {
     const { show, onClose, children } = this.props;
 
@@ -10,14 +15,14 @@ class Modal extends React.Component {
     }
 
     return (
-        <div className='model-overlay' onCanPlay={{onClose}}>
-        <div className="model-dialog" onClick={(e)=>e.stopPropagation()}>
-          <button className="model-close" onClick={onClose}>
+      <div className="modal-overlay" onClick={this.handleOverlayClick}>
+        <div className="modal-dialog">
+          <button className="modal-close" onClick={onClose}>
             Close
           </button>
-          <p className="model-p">{children}</p>
+          <p className="modal-p">{children}</p>
         </div>
-        </div>
+      </div>
     );
   }
 }
